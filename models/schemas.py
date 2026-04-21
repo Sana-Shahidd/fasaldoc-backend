@@ -49,11 +49,13 @@ class Shop(BaseModel):
     rating: Optional[float]
     place_id: str
     maps_url: str
+    stocks_medicine: Optional[str] = None   # medicine name if this shop stocks it
 
 
 class ShopsResponse(BaseModel):
     shops: List[Shop]
     cached: bool
+    searched_medicines: List[str] = []
 
 
 class HistoryEntry(BaseModel):
