@@ -15,7 +15,7 @@ router = APIRouter(prefix="/shops", tags=["shops"])
 async def shops(
     lat: float = Query(..., description="User latitude"),
     lng: float = Query(..., description="User longitude"),
-    radius: int = Query(default=5000, ge=500, le=50000),
+    radius: int = Query(default=5000, ge=500, le=1000000),  # up to 1000 km; service auto-expands if 0 results
     medicines: Optional[List[str]] = Query(
         default=None,
         description="Medicine names from /predict (e.g. Mancozeb, Captan). "

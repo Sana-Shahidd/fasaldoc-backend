@@ -23,7 +23,7 @@ from slowapi.middleware import SlowAPIMiddleware
 
 from config import ALLOWED_ORIGINS
 from services.model_service import model_service
-from routers import predict, shops, history
+from routers import predict, shops, history, products
 from models.schemas import HealthResponse
 
 logger = structlog.get_logger()
@@ -101,6 +101,7 @@ async def health():
 app.include_router(predict.router)
 app.include_router(shops.router)
 app.include_router(history.router)
+app.include_router(products.router)
 
 
 if __name__ == "__main__":

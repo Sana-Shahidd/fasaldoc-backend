@@ -36,5 +36,7 @@ FIREBASE_CREDENTIALS_PATH = os.getenv("FIREBASE_CREDENTIALS", "firebase_credenti
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
     os.getenv("FRONTEND_URL", ""),
 ]

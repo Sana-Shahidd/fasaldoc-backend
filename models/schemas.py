@@ -58,6 +58,30 @@ class ShopsResponse(BaseModel):
     searched_medicines: List[str] = []
 
 
+class ProductResult(BaseModel):
+    platform: str
+    platform_id: str
+    name: str
+    price: Optional[str]
+    original_price: Optional[str]
+    url: str
+    image: Optional[str]
+    rating: Optional[str]
+    reviews: Optional[int]
+    seller: Optional[str]
+    medicine_matched: str
+    in_stock: bool = True
+    cash_on_delivery: bool = False
+    delivery_days: Optional[str]
+
+
+class ProductSearchResponse(BaseModel):
+    products: List[ProductResult]
+    searched_medicines: List[str]
+    platforms_searched: List[str]
+    cached: bool = False
+
+
 class HistoryEntry(BaseModel):
     scan_id: str
     user_id: str
